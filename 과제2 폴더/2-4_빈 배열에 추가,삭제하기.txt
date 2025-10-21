@@ -1,0 +1,18 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> arr, vector<bool> flag) {
+   vector<int> X;
+    int n = (int)arr.size();
+    for (int i = 0; i < n; ++i) {
+        if (flag[i]) {
+            X.insert(X.end(), arr[i] * 2, arr[i]);
+        } else {
+            int cnt = arr[i];
+            while (cnt-- && !X.empty()) X.pop_back();
+        }
+    }
+    return X;
+}

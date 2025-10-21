@@ -1,0 +1,14 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> dots) {
+    int minx = dots[0][0], maxx = dots[0][0];
+    int miny = dots[0][1], maxy = dots[0][1];
+    for (auto &p : dots) {
+        minx = min(minx, p[0]); maxx = max(maxx, p[0]);
+        miny = min(miny, p[1]); maxy = max(maxy, p[1]);
+    }
+    return (maxx - minx) * (maxy - miny);
+}

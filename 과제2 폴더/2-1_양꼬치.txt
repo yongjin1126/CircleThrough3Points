@@ -1,0 +1,11 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n, int k) {
+    int service = n / 10;
+    int drinkPay = (k - service) * 2000;
+    if (drinkPay < 0) drinkPay = 0;     // (안전)
+    return n * 12000 + drinkPay;
+}
